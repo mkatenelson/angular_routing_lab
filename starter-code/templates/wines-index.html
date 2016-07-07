@@ -3,8 +3,16 @@
 
 <div ng-repeat="wine in wines">
   <div class="row">
+    <div class="col-xs-4">
+      <a ng-href="/wines/{{ wine.id }}">
+        <img ng-src="{{ wine.picture }}" class="img-responsive img-limits">
+      </a>
+    </div>
+
     <div class="col-xs-8">
-      <h5><a ng-href="/wines/{{ wine.id }}">{{ wine.name }}</a></h5>
+      <h5>
+        <a ng-href="/wines/{{ wine.id }}">{{ wine.name }}</a>
+      </h5>
     </div>
   </div>
 </div>

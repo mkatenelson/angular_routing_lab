@@ -1,8 +1,10 @@
 <!-- Welcome to Wine Show (templates/wines-show.html) -->
 
-<div>
+<div class="text-center">
   <h3>{{ wine.name }}</h3>
-  <hr>
+  <hr/>
+  <img ng-src="{{ wine.picture }}" class="img-responsive" style="margin: 0 auto"/>
+  <hr/>
   <p><b>Year: </b>{{ wine.year }}</p>
   <p><b>Grapes: </b>{{ wine.grapes }}</p>
   <p><b>Country: </b>{{ wine.country }}</p>
