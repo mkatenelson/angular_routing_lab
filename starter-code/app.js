@@ -38,7 +38,7 @@ app.controller('WinesShowCtrl', function($scope, WineService, $routeParams) {
   console.log("Wine Show", $routeParams.id);
   $scope.wine = WineService.get($routeParams.id);
   // console.log($scope.wine.name);
-})
+});
 
 ////////////
 // MODELS //
