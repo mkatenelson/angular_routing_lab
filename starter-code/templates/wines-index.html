@@ -1,11 +1,10 @@
-Welcome to Wine Index (templates/wines-index.html)
-
-{{ hello }}
+<!-- Welcome to Wine Index (templates/wines-index.html)
+{{ hello }} -->
 
 <div ng-repeat="wine in wines">
   <div class="row">
     <div class="col-xs-8">
-      <h5>{{wine.name}}</h5>
+      <h5><a ng-href="/wines/{{ wine.id }}">{{ wine.name }}</a></h5>
     </div>
   </div>
 </div>

@@ -11,11 +11,11 @@ app.config(function($routeProvider, $locationProvider) {
       // template: 'Home!',
       templateUrl: '/templates/wines-index.html',
       controller: 'WinesIndexCtrl'
+    })
+    .when('/wines/:id', { // the "id" parameter
+      templateUrl: '/templates/wines-show.html',
+      controller: 'WinesShowCtrl'
     });
-    // .when('/wines/:id', { // the "id" parameter
-    //   templateUrl: 'templates/wines-show.html',
-    //   controller: 'WinesShowCtrl'
-    // });
 
     $locationProvider.html5Mode({
       enabled: true,
@@ -34,9 +34,9 @@ app.controller('WinesIndexCtrl',function($scope, WineService) {
   $scope.wines = WineService.query();
 });
 
-app.controller('WinesShowCtrl',function($scope, WineService) {
-  // console.log("Wine Show");
-  $scope.wine = WineService.get();
+app.controller('WinesShowCtrl', function($scope, WineService, $routeParams) {
+  console.log("Wine Show", $routeParams.id);
+  $scope.wine = WineService.get($routeParams.id);
   // console.log($scope.wine.name);
 })
 
