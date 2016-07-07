@@ -27,15 +27,17 @@ app.config(function($routeProvider, $locationProvider) {
 // CONTROLLERS //
 /////////////////
 
-app.controller('WinesIndexCtrl',function($scope){
+app.controller('WinesIndexCtrl',function($scope, WineService) {
   console.log("Wine Index");
   // $scope.hello = "Wine Index Controller is working!";
-  $scope.wines = ALL_WINES; // basic show wines solution
-})
+  // $scope.wines = ALL_WINES; // basic show wines solution
+  $scope.wines = WineService.query();
+});
 
-app.controller('WinesShowCtrl',function($scope){
+app.controller('WinesShowCtrl',function($scope, WineService) {
   // console.log("Wine Show");
-  console.log($scope.wine.name);
+  $scope.wine = WineService.get();
+  // console.log($scope.wine.name);
 })
 
 ////////////
