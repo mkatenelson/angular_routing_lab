@@ -5,14 +5,24 @@ console.log('Angular is working.');
 ////////////
 // ROUTES //
 ////////////
+var app = angular.module('wineApp', ['ngRoute']);
 
+app.config(function($routeProvider) {
+  $routeProvider
+    .when('/', {
+      // template: 'Home!',
+      templateUrl: '/templates/wines-index.html',
+      controller: 'WinesIndexCtrl'
+    })
+})
 
 /////////////////
 // CONTROLLERS //
 /////////////////
 
 app.controller('WinesIndexCtrl',function($scope){
-  console.log("Wine Index")
+  console.log("Wine Index");
+  $scope.hello = "Wine Index Controller is working!";
 })
 
 app.controller('WinesShowCtrl',function($scope){
